@@ -28,7 +28,7 @@
         android:layout_gravity="center_horizontal"
         android:background="@color/white"
         android:hint="@string/hint_email"
-        android:inputType="textPassword"
+        android:inputType="textEmailAddress"
         android:paddingStart="10dp">
 
     </com.google.android.material.textfield.TextInputEditText>
