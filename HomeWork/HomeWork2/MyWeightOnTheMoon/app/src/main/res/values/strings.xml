@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Weight On The Moon</string>
+    <string name="tittle">Please enter your current Weight</string>
+    <string name="answer">Your weight in the moon is:</string>
+    <string name="calculate">Let\'s calculate</string>
+    <string name="put_value">Put here your earth weight</string>
+</resources>
