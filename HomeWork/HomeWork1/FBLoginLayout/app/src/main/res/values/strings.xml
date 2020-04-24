@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FB Login Layout</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="sing_up">Sign Up for Facebook</string>
+    <string name="need_help">Need Help?</string>
+</resources>

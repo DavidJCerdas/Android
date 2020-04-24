@@ -1,0 +1,2 @@
+rootProject.name='FB Login Menu'
+include ':app'
