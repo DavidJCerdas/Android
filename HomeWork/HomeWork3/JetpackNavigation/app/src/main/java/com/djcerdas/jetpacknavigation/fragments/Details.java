@@ -36,7 +36,7 @@ public class Details extends Fragment {
         float moonWeight = (float) ((currentUserWeight/9.81)* 1.622);
         String finalResult = String.format("%.2f", moonWeight);
 
-        result.setText("Answer: "+ finalResult);
+        result.setText("Answer: "+ finalResult+"Kg");
 
     }
 }
