@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Jetpack Navigation</string>
+    <string name="calculate">Proceed to calculate</string>
+    <string name="username">Username</string>
+    <string name="hi_user">Hi User</string>
+    <string name="tittle">Welcome to the Moon Weight Calculator! v.2.0</string>
+    <string name="earth_weight">Put your weight(KG) here</string>
 </resources>
