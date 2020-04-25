@@ -13,16 +13,17 @@
     <ImageView
         android:id="@+id/iv1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:src="@drawable/ic_facebook"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="80dp"
+        android:layout_weight="1">
     </ImageView>
 
     <EditText
         android:id="@+id/user_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:background="@color/white"
@@ -30,12 +31,13 @@
         android:fontFamily="@font/roboto"
         android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
-        android:paddingStart="10dp" />
+        android:paddingStart="10dp"
+        android:layout_weight="0.5"/>
 
     <EditText
         android:id="@+id/user_password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/white"
         android:fontFamily="@font/roboto"
         android:hint="@string/hint_password"
@@ -43,37 +45,41 @@
         android:inputType="textPassword"
         android:paddingStart="10dp"
         android:layout_marginTop="1dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_weight="0.5"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:background="@color/light_blue"
         android:text="@string/log_in"
         android:fontFamily="@font/roboto"
         android:textAllCaps="false"
-        android:textColor="@color/white">
+        android:textColor="@color/white"
+        android:layout_weight="0.5">
     </Button>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="65dp"
         android:text="@string/sing_up"
         android:fontFamily="@font/roboto"
-        android:textColor="@color/white"></TextView>
+        android:textColor="@color/white"
+        android:layout_weight="1"></TextView>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="@string/need_help"
         android:textColor="@color/white"
         android:fontFamily="@font/roboto"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:layout_weight="1">
     </TextView>
 
 </LinearLayout>
