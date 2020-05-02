@@ -13,20 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="114dp"
         android:background="@color/colorDarkBlue"
-        android:textAlignment="center"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/tittle"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/tittle_app"
         android:textColor="@color/colorWhite"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="119dp"
         tools:layout_editor_absoluteY="204dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_weight="1"/>
 
     <EditText
         android:id="@+id/userWeightEarthX"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="@string/customer_weight"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="numberDecimal" />
@@ -37,16 +39,5 @@
         android:layout_height="wrap_content"
         android:text="@string/calculate"
         android:layout_weight="3"/>
-
-    <TextView
-        android:id="@+id/answerX"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="45sp"
-        android:textColor="@color/colorDarkBlue"
-        android:background="@color/colorWhite"
-        android:text="TextView" />
-
 
 </LinearLayout>
