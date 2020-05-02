@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                    Intent intentX = new Intent(MainActivity.this,WeightOnTheMoon.class);
                    intentX.putExtra("WEIGHT", userWeightEarthX.getText().toString() );
                    startActivity(intentX);
+                   finish();
                }
            });
     }
