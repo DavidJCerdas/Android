@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Swipe Views</string>
+    <string name="wheater">Wheater</string>
+    <string name="current_wheather">Current Wheather</string>
+</resources>
