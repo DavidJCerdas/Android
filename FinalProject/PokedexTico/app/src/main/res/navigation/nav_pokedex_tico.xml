@@ -12,7 +12,7 @@
         <action
             android:id="@+id/action_login_to_menu"
             app:destination="@id/menuPokedex"
-            app:enterAnim="@anim/fragment_fade_enter" />
+            app:enterAnim="@anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/menuPokedex"
