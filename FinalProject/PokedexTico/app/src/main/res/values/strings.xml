@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pokedex Tico</string>
+    <string name="boy">Boy</string>
+    <string name="enter">Enter</string>
+    <string name="is_girl">Girl</string>
+    <string name="gender">Gender:</string>
+    <string name="pok_mon_trainer">Pokémon Trainer</string>
+    <string name="trainer_name">Trainer Name</string>
+    <string name="logo">logo_pokemon</string>
+</resources>
