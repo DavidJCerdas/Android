@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.231"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/trainerName"
         app:layout_constraintVertical_bias="0.355" />
 
     <ImageView
@@ -36,14 +36,14 @@
         app:srcCompat="@drawable/ic_international_pokemon_logo" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/trainerName"
         android:layout_width="264dp"
         android:layout_height="82dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:textColorHint="@color/colorWhite"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +51,7 @@
         app:layout_constraintVertical_bias="0.146">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/trainerNameData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/trainer_name"

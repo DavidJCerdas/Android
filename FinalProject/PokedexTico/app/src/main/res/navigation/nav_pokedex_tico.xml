@@ -8,5 +8,18 @@
         android:id="@+id/loginFragment"
         tools:layout="@layout/fragment_login_user"
         android:name="com.djcerdas.pokedextico.fragment.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_login_to_menu"
+            app:destination="@id/menuPokedex"
+            app:enterAnim="@anim/fragment_fade_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuPokedex"
+        android:name="com.djcerdas.pokedextico.fragment.MenuPokedex"
+        android:label="MenuPokedex" >
+        <argument
+            android:name="trainerName"
+            app:argType="string" />
+    </fragment>
 </navigation>

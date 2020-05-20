@@ -5,17 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.djcerdas.pokedextico.R;
+import com.google.android.material.textfield.TextInputEditText;
+
 
 public class LoginFragment extends Fragment {
 
     private Button loginButton;
+    private TextInputEditText trainerNameData;
 
     @Nullable
     @Override
@@ -27,11 +29,14 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loginButton = view.findViewById(R.id.loginButton);
+        trainerNameData = view.findViewById(R.id.trainerNameData);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // I need to set the right new fragment
-                NavHostFragment.findNavController(LoginFragment.this).navigate(R.id.loginFragment);
+               NavDirections action = LoginFragmentDirections.actionLoginToMenu(trainerNameData.getText().toString());
+               NavHostFragment.findNavController(LoginFragment.this).navigate(action);
             }
         });
     }
