@@ -22,6 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getPokemonList();
+    }
+
     // Get pokemon list
     private void getPokemonList(){
         RetrofitProvider retrofitProvider = new RetrofitProvider();
@@ -29,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Pokemon>> call, Response<List<Pokemon>> response) {
                 if(response.isSuccessful()){
-                    Log.d("POKEMON:", "response.message()");
+                    Log.d("POKEMON Name:", response.body().get(0).getName()+"");
                 }else{
                     Log.e("SERVER_ERROR", "getPokemonApiService() response was not successful.");
                 }
@@ -41,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    // Get a single Pokemon
-    private void getOnPokemon(){
-        RetrofitGetOne retrofitgetone = new RetrofitGetOne();
-        retrofitgetone.getPokemonApiGetOne().getPokemon("bulbasaur");
-    }
+//    // Get a single Pokemon
+//    private void getOnPokemon(){
+//        RetrofitGetOne retrofitgetone = new RetrofitGetOne();
+//        retrofitgetone.getPokemonApiGetOne().getPokemon("bulbasaur");
+//    }
 
 }
