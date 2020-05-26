@@ -4,9 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.djcerdas.pokedextico.api.RetrofitGetOne;
 import com.djcerdas.pokedextico.api.RetrofitProvider;
-import com.djcerdas.pokedextico.model.Pokemon;
+import com.djcerdas.pokedextico.model.PokemonList;
 
 import java.util.List;
 
@@ -28,29 +27,24 @@ public class MainActivity extends AppCompatActivity {
         getPokemonList();
     }
 
-    // Get pokemon list
     private void getPokemonList(){
         RetrofitProvider retrofitProvider = new RetrofitProvider();
-        retrofitProvider.getPokemonApiService().getPokemon(0,25).enqueue(new Callback<List<Pokemon>>() {
+        retrofitProvider.getPokemonApiService().getPokemonList(0,25).enqueue(new Callback<List<PokemonList>>() {
             @Override
-            public void onResponse(Call<List<Pokemon>> call, Response<List<Pokemon>> response) {
+            public void onResponse(Call<List<PokemonList>> call, Response<List<PokemonList>> response) {
                 if(response.isSuccessful()){
-                    Log.d("POKEMON Name:", response.body().get(0).getName()+"");
+                    Log.d("POKEMON:", response.body().get(0).getName()+"");
                 }else{
                     Log.e("SERVER_ERROR", "getPokemonApiService() response was not successful.");
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Pokemon>> call, Throwable error) {
-                Log.e("SERVER_ERROR", error.getLocalizedMessage());
+            public void onFailure(Call<List<PokemonList>> call, Throwable error) {
+                Log.e("SERVER_ERROR", "getPokemonApiService() response was not successful.");
             }
         });
     }
-//    // Get a single Pokemon
-//    private void getOnPokemon(){
-//        RetrofitGetOne retrofitgetone = new RetrofitGetOne();
-//        retrofitgetone.getPokemonApiGetOne().getPokemon("bulbasaur");
-//    }
+    }
 
-}
+
