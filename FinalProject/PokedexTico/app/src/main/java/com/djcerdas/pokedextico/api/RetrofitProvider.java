@@ -13,7 +13,7 @@ public class RetrofitProvider {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        PokemonApiService pokemonApiService = retrofit.create(PokemonApiService.class);
+        pokemonApiService = retrofit.create(PokemonApiService.class);
     }
 
     public PokemonApiService getPokemonApiService() {

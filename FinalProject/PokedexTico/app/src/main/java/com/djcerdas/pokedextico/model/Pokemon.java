@@ -11,12 +11,19 @@ public class Pokemon {
     @SerializedName("weight")
     private int weight;
 
+    @SerializedName("is_favorite")
+    private Boolean isFavorite;
+
     private String spritesFrontDefault;
     private String[] move;
     private String[] type;
 
     public String getName() {
         return name;
+    }
+
+    public Boolean getFavorite() {
+        return isFavorite;
     }
 
     public int getId() {

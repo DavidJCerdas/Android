@@ -2,17 +2,15 @@ package com.djcerdas.pokedextico.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class PokemonList {
-    @SerializedName("Name")
-    private String name;
-    @SerializedName("url")
-    private String url;
+    @SerializedName("results")
+    private List<PokemonInfo> pokemonInfoList;
 
-    public String getUrl() {
-        return url;
+    public List<PokemonInfo> getPokemonInfoList() {
+        return pokemonInfoList;
     }
 
-    public String getName() {
-        return name;
-    }
 }
+
