@@ -18,6 +18,10 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
     private List<PokemonInfo> pokemonInfoList = new ArrayList<>();
 
 
+    public PokemonAdapter(List<PokemonInfo> pokemonInfoList) {
+        this.pokemonInfoList = pokemonInfoList;
+    }
+
     public void setPokemonInfoList(List<PokemonInfo> pokemonInfoList) {
         this.pokemonInfoList = pokemonInfoList;
         notifyDataSetChanged();

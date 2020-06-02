@@ -28,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
+        fillMockData();
         recyclerView.setAdapter(pokemonAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        fillMockData();
+
     }
 
     private void fillMockData(){
@@ -39,7 +40,12 @@ public class MainActivity extends AppCompatActivity {
         pokemons.add(pokemonInfo);
         pokemonInfo = new PokemonInfo("Pokemon Name Y", "url del pokemon 2", Boolean.TRUE);
         pokemons.add(pokemonInfo);
-        pokemonAdapter.setPokemonInfoList(pokemons);
+
+        pokemonInfo = new PokemonInfo("Pokemon Name Y", "url del pokemon 2", Boolean.TRUE);
+        pokemons.add(pokemonInfo);
+
+        pokemonAdapter = new PokemonAdapter(pokemons);
+
     }
 
     @Override
