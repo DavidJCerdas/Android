@@ -35,8 +35,8 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // I need to set the right new fragment
-               NavDirections action = LoginFragmentDirections.actionLoginToMenu(trainerNameData.getText().toString());
-               NavHostFragment.findNavController(LoginFragment.this).navigate(action);
+                NavDirections action = LoginFragmentDirections.LoginToMenu(trainerNameData.getText().toString());
+                NavHostFragment.findNavController(LoginFragment.this).navigate(action);;
             }
         });
     }

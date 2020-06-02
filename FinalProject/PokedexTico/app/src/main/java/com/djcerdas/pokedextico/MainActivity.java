@@ -1,24 +1,45 @@
 package com.djcerdas.pokedextico;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.djcerdas.pokedextico.api.RetrofitProvider;
-import com.djcerdas.pokedextico.model.PokemonList;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.djcerdas.pokedextico.adapter.PokemonAdapter;
+import com.djcerdas.pokedextico.model.PokemonInfo;
+
+import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private PokemonAdapter pokemonAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.recycler_view);
+
+        recyclerView = findViewById(R.id.recycler_view_layout);
+        initRecyclerView();
+
+    }
+
+    private void initRecyclerView() {
+        recyclerView.setAdapter(pokemonAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        fillMockData();
+    }
+
+    private void fillMockData(){
+        List<PokemonInfo> pokemons = new ArrayList<>();
+        PokemonInfo pokemonInfo = new PokemonInfo("Pokemon Name X", "url del pokemon 1", Boolean.TRUE);
+        pokemons.add(pokemonInfo);
+        pokemonInfo = new PokemonInfo("Pokemon Name Y", "url del pokemon 2", Boolean.TRUE);
+        pokemons.add(pokemonInfo);
+        pokemonAdapter.setPokemonInfoList(pokemons);
     }
 
     @Override
@@ -27,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         this.getPokemonList();
     }
 
-    private void getPokemonList(){
+    private void getPokemonList() {
 
     }
-    }
+}
 
 

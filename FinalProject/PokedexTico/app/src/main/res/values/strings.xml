@@ -9,5 +9,6 @@
     <string name="logo">logo_pokemon</string>
     <string name="pokemon_name">pokemon_name</string>
     <string name="todo">TODO</string>
+    <string name="no_elements">No elements</string>
     <integer name="dock_enter_exit_duration">3</integer>
 </resources>

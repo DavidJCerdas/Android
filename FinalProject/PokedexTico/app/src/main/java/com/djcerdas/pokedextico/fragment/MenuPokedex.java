@@ -26,8 +26,7 @@ public class MenuPokedex extends Fragment {
         print_var = view.findViewById(R.id.print_var);
 
         // Make the calculation of the weight on the Moon
-        String trainerName = MenuPokedexArgs.fromBundle(getArguments()).getTrainerName();
-        print_var.setText(trainerName);
-
+       String trainerName = MenuPokedexArgs.fromBundle(getArguments()).getTrainerName();
+       print_var.setText(trainerName);
         }
 }
