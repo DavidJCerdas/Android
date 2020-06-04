@@ -40,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
         pokemons.add(pokemonInfo);
         pokemonInfo = new PokemonInfo("Pokemon Name Y", "url del pokemon 2", Boolean.TRUE);
         pokemons.add(pokemonInfo);
-
-        pokemonInfo = new PokemonInfo("Pokemon Name Y", "url del pokemon 2", Boolean.TRUE);
+        pokemonInfo = new PokemonInfo("Pokemon Name Z", "url del pokemon 3", Boolean.TRUE);
+        pokemons.add(pokemonInfo);
+        pokemonInfo = new PokemonInfo("Pokemon Name H", "url del pokemon 4", Boolean.TRUE);
         pokemons.add(pokemonInfo);
 
         pokemonAdapter = new PokemonAdapter(pokemons);
