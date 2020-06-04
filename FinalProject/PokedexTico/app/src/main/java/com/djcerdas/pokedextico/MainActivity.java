@@ -1,22 +1,24 @@
 package com.djcerdas.pokedextico;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.djcerdas.pokedextico.Listener.OnPokemonClicked;
 import com.djcerdas.pokedextico.adapter.PokemonAdapter;
 import com.djcerdas.pokedextico.model.PokemonInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnPokemonClicked {
 
     private RecyclerView recyclerView;
-    private PokemonAdapter pokemonAdapter;
+    private PokemonAdapter pokemonAdapter = new PokemonAdapter(this::onClicked);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         pokemonInfo = new PokemonInfo("Pokemon Name HO HOHO", "url del pokemon 4", Boolean.TRUE);
         pokemons.add(pokemonInfo);
 
-        pokemonAdapter = new PokemonAdapter(pokemons);
+        pokemonAdapter.setPokemonInfoList(pokemons);
 
     }
 
@@ -58,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void getPokemonList() {
 
+    }
+
+    @Override
+    public void onClicked(PokemonInfo pokemonInfo) {
+        Log.d("Item Clicked", pokemonInfo.getName());
     }
 }
 

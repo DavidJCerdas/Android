@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.djcerdas.pokedextico.Listener.OnPokemonClicked;
 import com.djcerdas.pokedextico.R;
 import com.djcerdas.pokedextico.model.PokemonInfo;
 
@@ -16,7 +17,12 @@ import java.util.List;
 
 public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonViewholder> {
     private List<PokemonInfo> pokemonInfoList = new ArrayList<>();
+    private  OnPokemonClicked pokemonListener;
 
+
+    public PokemonAdapter(OnPokemonClicked pokemonListener) {
+        this.pokemonListener = pokemonListener;
+    }
 
     public PokemonAdapter(List<PokemonInfo> pokemonInfoList) {
         this.pokemonInfoList = pokemonInfoList;
@@ -36,7 +42,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
 
     @Override
     public void onBindViewHolder(@NonNull PokemonViewholder holder, int position) {
-         holder.bind(pokemonInfoList.get(position));
+         holder.bind(pokemonInfoList.get(position),pokemonListener);
     }
 
     @Override
@@ -54,9 +60,16 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
             isFavorite = itemView.findViewById(R.id.is_favorite);
         }
 
-        public void bind(PokemonInfo pokemonInfo){
+        public void bind(PokemonInfo pokemonInfo, OnPokemonClicked listener){
             pokemonName.setText(pokemonInfo.getName());
             isFavorite.setActivated(pokemonInfo.getFavorite());
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                listener.onClicked(pokemonInfo);
+                }
+            });
         }
     }
 
