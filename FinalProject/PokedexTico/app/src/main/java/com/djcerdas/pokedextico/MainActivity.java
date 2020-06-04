@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements OnPokemonClicked 
         pokemons.add(pokemonInfo);
         pokemonInfo = new PokemonInfo("Pokemon Name Z", "url del pokemon 3", Boolean.TRUE);
         pokemons.add(pokemonInfo);
-        pokemonInfo = new PokemonInfo("Pokemon Name HO HOHO", "url del pokemon 4", Boolean.TRUE);
+        pokemonInfo = new PokemonInfo("Pokemon Name HO HO HO", "url del pokemon 4", Boolean.TRUE);
         pokemons.add(pokemonInfo);
 
         pokemonAdapter.setPokemonInfoList(pokemons);
