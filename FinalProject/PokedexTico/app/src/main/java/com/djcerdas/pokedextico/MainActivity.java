@@ -3,6 +3,7 @@ package com.djcerdas.pokedextico;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         fillMockData();
         recyclerView.setAdapter(pokemonAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     private void fillMockData(){
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         pokemons.add(pokemonInfo);
         pokemonInfo = new PokemonInfo("Pokemon Name Z", "url del pokemon 3", Boolean.TRUE);
         pokemons.add(pokemonInfo);
-        pokemonInfo = new PokemonInfo("Pokemon Name H", "url del pokemon 4", Boolean.TRUE);
+        pokemonInfo = new PokemonInfo("Pokemon Name HO HOHO", "url del pokemon 4", Boolean.TRUE);
         pokemons.add(pokemonInfo);
 
         pokemonAdapter = new PokemonAdapter(pokemons);
