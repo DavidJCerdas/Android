@@ -34,7 +34,11 @@
         android:id="@+id/recycleView"
         tools:layout="@layout/recycler_view"
         android:name="com.djcerdas.pokedextico.fragment.RecycleViewFragment"
-        android:label="recycleView" />
+        android:label="recycleView">
+        <action
+            android:id="@+id/recycleView_to_showPokemonFragment"
+            app:destination="@id/showPokemonFragment" />
+    </fragment>
 
 
     <fragment
@@ -42,4 +46,14 @@
         tools:layout="@layout/fragment_null_display"
         android:name="com.djcerdas.pokedextico.fragment.NullDisplayFragment"
         android:label="NullDisplayFragment" />
+
+    <fragment
+        android:id="@+id/showPokemonFragment"
+        tools:layout="@layout/fragment_show_pokemon"
+        android:name="com.djcerdas.pokedextico.fragment.ShowPokemonFragment"
+        android:label="showPokemonFragment">
+        <argument
+            android:name="pokemonName"
+            app:argType="string" />
+    </fragment>
 </navigation>

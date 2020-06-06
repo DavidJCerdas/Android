@@ -5,10 +5,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +34,7 @@ public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
     private int POKEMONTOQUERY = 35;
     private RecyclerView recyclerView;
     private PokemonAdapter pokemonAdapter = new PokemonAdapter(this::onClicked);
+    private TextView pokemonName;
 
     @Nullable
     @Override
@@ -43,6 +47,7 @@ public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
         super.onViewCreated(view, savedInstanceState);
         super.onCreate(savedInstanceState);
         recyclerView = view.findViewById(R.id.recycler_view_layout);
+        pokemonName = view.findViewById(R.id.pokemon_name);
         initRecyclerView();
     }
 
@@ -80,16 +85,17 @@ public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
 
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
 
     }
 
-
     @Override
     public void onClicked(PokemonInfo pokemonInfo) {
         Log.d("Fragment - Item Clicked", pokemonInfo.getName());
+        String PokemonName = pokemonInfo.getName();
+        NavDirections action = RecycleViewFragmentDirections.recycleViewToShowPokemonFragment(PokemonName);
+        NavHostFragment.findNavController(RecycleViewFragment.this).navigate(action);
     }
 }

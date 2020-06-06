@@ -58,5 +58,6 @@ dependencies {
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
 
-
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
