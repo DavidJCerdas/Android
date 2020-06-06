@@ -13,9 +13,11 @@
             android:id="@+id/LoginToMenu"
             app:destination="@id/menuPokedex" />
     </fragment>
+
     <fragment
         android:id="@+id/menuPokedex"
         android:name="com.djcerdas.pokedextico.fragment.MenuPokedex"
+        tools:layout="@layout/menu_pokedex"
         android:label="MenuPokedex">
         <argument
             android:name="trainerName"
@@ -23,9 +25,21 @@
         <action
             android:id="@+id/menuPokedex_to_recycleView"
             app:destination="@id/recycleView" />
+        <action
+            android:id="@+id/menuPokedex_to_nullDisplayFragment"
+            app:destination="@id/nullDisplayFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/recycleView"
+        tools:layout="@layout/recycler_view"
         android:name="com.djcerdas.pokedextico.fragment.RecycleViewFragment"
         android:label="recycleView" />
+
+
+    <fragment
+        android:id="@+id/nullDisplayFragment"
+        tools:layout="@layout/fragment_null_display"
+        android:name="com.djcerdas.pokedextico.fragment.NullDisplayFragment"
+        android:label="NullDisplayFragment" />
 </navigation>

@@ -18,6 +18,7 @@ import com.djcerdas.pokedextico.R;
 public class MenuPokedex extends Fragment {
     private TextView print_var;
     private Button recycleButton;
+    private Button nullDisplay;
 
     @Nullable
     @Override
@@ -29,8 +30,17 @@ public class MenuPokedex extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recycleButton = view.findViewById(R.id.recycleViewButton);
+        nullDisplay = view.findViewById(R.id.displayNullButton);
         print_var = view.findViewById(R.id.print_var);
 
+        nullDisplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the Null Fragment
+                NavDirections action = MenuPokedexDirections.menuPokedexToNullDisplayFragment();
+                NavHostFragment.findNavController(MenuPokedex.this).navigate(action);
+            }
+        });
         recycleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

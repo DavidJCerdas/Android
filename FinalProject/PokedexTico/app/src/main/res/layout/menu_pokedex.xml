@@ -11,7 +11,7 @@
         android:id="@+id/print_var"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="16dp"
         android:text="print_var"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/colorWhite"
@@ -42,6 +42,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/print_var"
-        app:layout_constraintVertical_bias="0.48000002" />
+        app:layout_constraintTop_toBottomOf="@+id/displayNullButton" />
+
+    <Button
+        android:id="@+id/displayNullButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Null Display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/print_var" />
 </androidx.constraintlayout.widget.ConstraintLayout>
