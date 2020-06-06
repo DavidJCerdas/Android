@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDarkRed">
+    android:background="@color/colorLightBlue">
 
     <TextView
         android:id="@+id/gender"
@@ -13,7 +13,7 @@
         android:layout_marginTop="15dp"
         android:text="@string/gender"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorDarkBlue"
         app:layout_constraintBottom_toTopOf="@+id/myRadioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.231"
@@ -26,8 +26,8 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@color/colorDarkRed"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorLightBlue"
         android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -53,10 +53,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/trainerNameData"
             android:layout_width="match_parent"
-            android:textColor="@color/colorWhite"
             android:layout_height="wrap_content"
             android:hint="@string/trainer_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/colorBlack" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -93,7 +93,7 @@
             android:id="@+id/is_boy"
             android:layout_width="97dp"
             android:layout_height="84dp"
-            android:background="@drawable/ic_boy"
+            android:button="@drawable/ic_boy"
             android:gravity="center_horizontal|center_vertical"
             app:layout_constraintBaseline_toBaselineOf="@+id/is_girl"
             app:layout_constraintEnd_toStartOf="@+id/is_girl"
@@ -103,7 +103,7 @@
             android:id="@+id/is_girl"
             android:layout_width="97dp"
             android:layout_height="84dp"
-            android:background="@drawable/ic_girl"
+            android:button="@drawable/ic_girl"
             android:gravity="center_horizontal|center_vertical"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
