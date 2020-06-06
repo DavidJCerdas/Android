@@ -4,16 +4,13 @@ import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.djcerdas.pokedextico.Listener.OnPokemonClicked;
-import com.djcerdas.pokedextico.adapter.PokemonAdapter;
-import com.djcerdas.pokedextico.model.PokemonInfo;
+import com.djcerdas.pokedextico.api.RetrofitProvider;
+import com.djcerdas.pokedextico.model.PokemonList;
 
-import java.util.ArrayList;
-import java.util.List;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -26,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
     }
-
 
 }
 

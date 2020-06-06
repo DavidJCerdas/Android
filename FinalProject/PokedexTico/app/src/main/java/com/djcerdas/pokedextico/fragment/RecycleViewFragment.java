@@ -16,13 +16,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.djcerdas.pokedextico.Listener.OnPokemonClicked;
 import com.djcerdas.pokedextico.R;
 import com.djcerdas.pokedextico.adapter.PokemonAdapter;
+import com.djcerdas.pokedextico.api.RetrofitProvider;
 import com.djcerdas.pokedextico.model.PokemonInfo;
+import com.djcerdas.pokedextico.model.PokemonList;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
+public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
+    private int POKEMONTOQUERY = 35;
     private RecyclerView recyclerView;
     private PokemonAdapter pokemonAdapter = new PokemonAdapter(this::onClicked);
 
@@ -49,26 +55,38 @@ public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
 
     private void fillMockData() {
         List<PokemonInfo> pokemons = new ArrayList<>();
-        PokemonInfo pokemonInfo = new PokemonInfo("Pokemon Name X", "url del pokemon 1", Boolean.TRUE);
-        pokemons.add(pokemonInfo);
-        pokemonInfo = new PokemonInfo("Pokemon Name Y", "url del pokemon 2", Boolean.TRUE);
-        pokemons.add(pokemonInfo);
-        pokemonInfo = new PokemonInfo("Pokemon Name Z", "url del pokemon 3", Boolean.TRUE);
-        pokemons.add(pokemonInfo);
-        pokemonInfo = new PokemonInfo("Pokemon Name HO HO HO", "url del pokemon 4", Boolean.TRUE);
-        pokemons.add(pokemonInfo);
-        pokemonAdapter.setPokemonInfoList(pokemons);
+
+        RetrofitProvider retrofitProvider = new RetrofitProvider();
+        retrofitProvider.getPokemonApiService().getPokemonList(0, POKEMONTOQUERY).enqueue(new Callback<PokemonList>() {
+            public void onResponse(Call<PokemonList> call, Response<PokemonList> response) {
+                if (response.isSuccessful()) {
+                    for (int creature = 0; creature < POKEMONTOQUERY; creature++) {
+                        PokemonInfo pokemonInfo = new PokemonInfo(response.body().getPokemonInfoList().get(creature).getName(), response.body().getPokemonInfoList().get(creature).getUrl().toString(), Boolean.FALSE);
+                        pokemons.add(pokemonInfo);
+                    }
+                    Log.d("POKERROR", pokemons.get(0).getName() + ", URL:" + pokemons.get(0).getUrl() + ", Is Favorite:" + pokemons.get(0).getFavorite());
+                } else {
+                    Log.d("POKERROR", "Not able to fill pokemons with the data from getPokemonApiService()");
+                }
+                pokemonAdapter.setPokemonInfoList(pokemons);
+            }
+
+            @Override
+            public void onFailure(Call<PokemonList> call, Throwable error) {
+                Log.e("POKERROR", error.getLocalizedMessage());
+            }
+        });
+
+
     }
 
 
     @Override
     public void onResume() {
         super.onResume();
-        this.getPokemonList();
+
     }
 
-    private void getPokemonList() {
-    }
 
     @Override
     public void onClicked(PokemonInfo pokemonInfo) {
