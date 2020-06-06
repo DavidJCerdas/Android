@@ -2,11 +2,14 @@ package com.djcerdas.pokedextico.model;
 import com.google.gson.annotations.SerializedName;
 
 public class PokemonInfo {
-    public PokemonInfo(String name, String url, Boolean isFavorite) {
+    public PokemonInfo(Integer id, String name, String url, Boolean isFavorite) {
+        this.pokemonID = id;
         this.name = name;
         this.url = url;
         this.isFavorite = isFavorite;
     }
+
+    private int pokemonID;
 
     @SerializedName("name")
     private String name;
@@ -15,7 +18,13 @@ public class PokemonInfo {
     @SerializedName("is_favorite")
     private Boolean isFavorite;
 
+    public Integer getPokemonID() {
+        return pokemonID;
+    }
 
+    public void setPokemonID(int pokemonID) {
+        this.pokemonID = pokemonID;
+    }
 
     public String getName() {
         return name;

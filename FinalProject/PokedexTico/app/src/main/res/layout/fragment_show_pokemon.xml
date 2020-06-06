@@ -8,14 +8,16 @@
     <ImageView
         android:id="@+id/pokemonShowImage"
         android:layout_width="0dp"
-        android:layout_height="353dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/pokemon_name"
-        app:layout_constraintDimensionRatio="h,0.2:0.2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23000002"
         app:srcCompat="@drawable/ic_pokeball" />
 
     <TextView
@@ -27,6 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pokemonShowImage" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71000004" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

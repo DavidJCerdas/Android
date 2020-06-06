@@ -31,7 +31,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
-    private int POKEMONTOQUERY = 35;
+    private int POKEMONTOQUERY = 10;
     private RecyclerView recyclerView;
     private PokemonAdapter pokemonAdapter = new PokemonAdapter(this::onClicked);
     private TextView pokemonName;
@@ -66,10 +66,9 @@ public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
             public void onResponse(Call<PokemonList> call, Response<PokemonList> response) {
                 if (response.isSuccessful()) {
                     for (int creature = 0; creature < POKEMONTOQUERY; creature++) {
-                        PokemonInfo pokemonInfo = new PokemonInfo(response.body().getPokemonInfoList().get(creature).getName(), response.body().getPokemonInfoList().get(creature).getUrl().toString(), Boolean.FALSE);
+                        PokemonInfo pokemonInfo = new PokemonInfo(creature + 1, response.body().getPokemonInfoList().get(creature).getName().substring(0, 1).toUpperCase() + response.body().getPokemonInfoList().get(creature).getName().substring(1), response.body().getPokemonInfoList().get(creature).getUrl(), Boolean.FALSE);
                         pokemons.add(pokemonInfo);
                     }
-                    Log.d("POKERROR", pokemons.get(0).getName() + ", URL:" + pokemons.get(0).getUrl() + ", Is Favorite:" + pokemons.get(0).getFavorite());
                 } else {
                     Log.d("POKERROR", "Not able to fill pokemons with the data from getPokemonApiService()");
                 }
@@ -93,9 +92,10 @@ public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
 
     @Override
     public void onClicked(PokemonInfo pokemonInfo) {
-        Log.d("Fragment - Item Clicked", pokemonInfo.getName());
-        String PokemonName = pokemonInfo.getName();
-        NavDirections action = RecycleViewFragmentDirections.recycleViewToShowPokemonFragment(PokemonName);
+        Integer pokemonID = pokemonInfo.getPokemonID();
+        String pokemonName = pokemonInfo.getName();
+
+        NavDirections action = RecycleViewFragmentDirections.recycleViewToShowPokemonFragment(pokemonName, pokemonID);
         NavHostFragment.findNavController(RecycleViewFragment.this).navigate(action);
     }
 }

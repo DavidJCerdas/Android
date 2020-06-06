@@ -68,7 +68,6 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
                 @Override
                 public void onClick(View v) {
                 listener.onClicked(pokemonInfo);
-
                 }
             });
         }
