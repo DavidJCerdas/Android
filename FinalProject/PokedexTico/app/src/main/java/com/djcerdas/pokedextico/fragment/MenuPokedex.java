@@ -4,15 +4,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.fragment.NavHostFragment;
+
 import com.djcerdas.pokedextico.R;
 
 public class MenuPokedex extends Fragment {
     private TextView print_var;
-
+    private Button recycleButton;
 
     @Nullable
     @Override
@@ -23,10 +28,21 @@ public class MenuPokedex extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        recycleButton = view.findViewById(R.id.recycleViewButton);
         print_var = view.findViewById(R.id.print_var);
 
+        recycleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Test the Recycle view was not broken
+                NavDirections action = MenuPokedexDirections.menuPokedexToRecycleView();
+                NavHostFragment.findNavController(MenuPokedex.this).navigate(action);
+            }
+        });
         // Make the calculation of the weight on the Moon
-       String trainerName = MenuPokedexArgs.fromBundle(getArguments()).getTrainerName();
-       print_var.setText(trainerName);
-        }
+        String trainerName = MenuPokedexArgs.fromBundle(getArguments()).getTrainerName();
+        print_var.setText(trainerName);
+    }
+
+
 }

@@ -16,9 +16,16 @@
     <fragment
         android:id="@+id/menuPokedex"
         android:name="com.djcerdas.pokedextico.fragment.MenuPokedex"
-        android:label="MenuPokedex" >
+        android:label="MenuPokedex">
         <argument
             android:name="trainerName"
             app:argType="string" />
+        <action
+            android:id="@+id/menuPokedex_to_recycleView"
+            app:destination="@id/recycleView" />
     </fragment>
+    <fragment
+        android:id="@+id/recycleView"
+        android:name="com.djcerdas.pokedextico.fragment.RecycleViewFragment"
+        android:label="recycleView" />
 </navigation>
