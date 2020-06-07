@@ -1,6 +1,7 @@
 package com.djcerdas.pokedextico.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,20 +11,32 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.djcerdas.pokedextico.R;
+import com.djcerdas.pokedextico.model.PokemonList;
+import com.djcerdas.pokedextico.viewmodel.PokemonViewModel;
 
 public class MenuPokedex extends Fragment {
     private TextView print_var;
     private Button recycleButton;
     private Button nullDisplay;
+    private PokemonViewModel viewModel;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.menu_pokedex,container,false);
+        return inflater.inflate(R.layout.menu_pokedex, container, false);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        viewModel = new ViewModelProvider(this).get(PokemonViewModel.class);
+        viewModel.getPokemonList();
     }
 
     @Override
@@ -52,6 +65,13 @@ public class MenuPokedex extends Fragment {
         // Make the calculation of the weight on the Moon
         String trainerName = MenuPokedexArgs.fromBundle(getArguments()).getTrainerName();
         print_var.setText(trainerName);
+
+        viewModel.getPokemonListLiveData().observe(getViewLifecycleOwner(), new Observer<PokemonList>() {
+            @Override
+            public void onChanged(PokemonList pokemonList) {
+                Log.d("POKERROR", pokemonList.getPokemonInfoList().get(0).getName());
+            }
+        });
     }
 
 

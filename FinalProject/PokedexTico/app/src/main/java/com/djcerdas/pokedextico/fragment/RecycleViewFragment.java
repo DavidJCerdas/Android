@@ -31,7 +31,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
-    private int POKEMONTOQUERY = 10;
+    private int POKEMONTOQUERY = 40;
     private RecyclerView recyclerView;
     private PokemonAdapter pokemonAdapter = new PokemonAdapter(this::onClicked);
     private TextView pokemonName;
