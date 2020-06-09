@@ -29,7 +29,7 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loginButton = view.findViewById(R.id.loginButton);
-        trainerNameData = view.findViewById(R.id.trainerNameData);
+        trainerNameData = view.findViewById(R.id.DisplaytrainerName);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
