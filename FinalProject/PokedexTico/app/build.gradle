@@ -26,6 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    // View Binding
+    viewBinding {
+        enabled = true
+    }
 
 }
 
@@ -49,15 +53,14 @@ dependencies {
     // Dependency for Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.7.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
-
     // View Model
     def lifecycle_version = "2.2.0"
-
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
-
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+    // ViewPager2
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }

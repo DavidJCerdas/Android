@@ -1,18 +1,16 @@
 package com.djcerdas.pokedextico;
 
 import android.os.Bundle;
-import android.util.Log;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.djcerdas.pokedextico.api.RetrofitProvider;
-import com.djcerdas.pokedextico.model.PokemonList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    //@BindView(R.id.pagerMenu)
+    ViewPager2 viewPager;
+    //@BindView(R.id.tabLayoutMenu);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
