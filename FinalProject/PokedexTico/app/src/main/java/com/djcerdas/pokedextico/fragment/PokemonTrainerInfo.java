@@ -1,5 +1,7 @@
 package com.djcerdas.pokedextico.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ public class PokemonTrainerInfo extends Fragment {
     private TextView trainerLevel;
     private Button exitButton;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,6 +34,5 @@ public class PokemonTrainerInfo extends Fragment {
         trainerLevel = view.findViewById(R.id.DisplayCurrentLevel);
         exitButton = view.findViewById(R.id.exitButton);
     }
-
 
 }

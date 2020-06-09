@@ -19,6 +19,7 @@ public class MenuPokedex extends Fragment {
     private TextView print_var;
     private Button recycleButton;
     private Button nullDisplay;
+    private Button trainerInfo;
 
     @Nullable
     @Override
@@ -31,6 +32,7 @@ public class MenuPokedex extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         recycleButton = view.findViewById(R.id.recycleViewButton);
         nullDisplay = view.findViewById(R.id.displayNullButton);
+        trainerInfo = view.findViewById(R.id.trainerInfoButton);
         print_var = view.findViewById(R.id.print_var);
 
         nullDisplay.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +51,14 @@ public class MenuPokedex extends Fragment {
                 NavHostFragment.findNavController(MenuPokedex.this).navigate(action);
             }
         });
+        trainerInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavDirections action = MenuPokedexDirections.menuPokedexToPokemonTrainerInfo(MenuPokedexArgs.fromBundle(getArguments()).getTrainerName());
+                NavHostFragment.findNavController(MenuPokedex.this).navigate(action);
+            }
+        });
+
         // Make the calculation of the weight on the Moon
         String trainerName = MenuPokedexArgs.fromBundle(getArguments()).getTrainerName();
         print_var.setText(trainerName);

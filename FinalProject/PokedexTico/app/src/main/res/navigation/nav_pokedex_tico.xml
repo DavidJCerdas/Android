@@ -28,6 +28,9 @@
         <action
             android:id="@+id/menuPokedex_to_nullDisplayFragment"
             app:destination="@id/nullDisplayFragment" />
+        <action
+            android:id="@+id/menuPokedex_to_pokemonTrainerInfo"
+            app:destination="@id/pokemonTrainerInfo" />
     </fragment>
 
     <fragment
@@ -58,5 +61,12 @@
         <argument
             android:name="pokemonID"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonTrainerInfo"
+        tools:layout="@layout/fragment_trainer_info"
+        android:name="com.djcerdas.pokedextico.fragment.PokemonTrainerInfo"
+        android:label="PokemonTrainerInfo">
+        <argument android:name="trainerName" />
     </fragment>
 </navigation>
