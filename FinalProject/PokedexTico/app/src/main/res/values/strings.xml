@@ -10,5 +10,11 @@
     <string name="pokemon_name">pokemon_name</string>
     <string name="todo">TODO</string>
     <string name="no_elements">No elements</string>
+    <string name="exitButton">Exit</string>
+    <string name="current_level">Current Level</string>
+    <string name="name">Name</string>
+    <string name="level">Level</string>
+    <string name="trainer_name">Trainer Name</string>
+    <string name="todo">TODO</string>
     <integer name="dock_enter_exit_duration">3</integer>
 </resources>
