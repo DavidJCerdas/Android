@@ -24,6 +24,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:text="print_var"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toTopOf="@+id/displayNullButton"
@@ -31,7 +32,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.857" />
+        app:layout_constraintVertical_bias="0.857"
+        tools:text="@tools:sample/full_names" />
 
     <Button
         android:id="@+id/displayNullButton"
@@ -60,10 +62,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Test RecycleView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainerInfoButton" />
+
+    <Button
+        android:id="@+id/newMenuPokedexX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="newMenuPokedexX"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainerInfoButton"
+        app:layout_constraintTop_toBottomOf="@+id/recycleViewButton"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

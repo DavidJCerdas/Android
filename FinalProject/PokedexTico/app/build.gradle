@@ -26,10 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    // View Binding
-    viewBinding {
-        enabled = true
-    }
+//    // View Binding
+//    viewBinding {
+//        enabled = true
+//    }
 
 }
 
@@ -63,4 +63,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     // ViewPager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+    // Butter Knife
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 }

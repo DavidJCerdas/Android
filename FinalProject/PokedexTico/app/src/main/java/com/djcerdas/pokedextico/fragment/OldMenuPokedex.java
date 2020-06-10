@@ -20,6 +20,7 @@ public class OldMenuPokedex extends Fragment {
     private Button recycleButton;
     private Button nullDisplay;
     private Button trainerInfo;
+    private Button newMenuPokedex;
 
     @Nullable
     @Override
@@ -34,6 +35,7 @@ public class OldMenuPokedex extends Fragment {
         nullDisplay = view.findViewById(R.id.displayNullButton);
         trainerInfo = view.findViewById(R.id.trainerInfoButton);
         print_var = view.findViewById(R.id.print_var);
+        newMenuPokedex = view.findViewById(R.id.newMenuPokedexX);
 
         nullDisplay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +62,15 @@ public class OldMenuPokedex extends Fragment {
         });
         String trainerName = OldMenuPokedexArgs.fromBundle(getArguments()).getTrainerName();
         print_var.setText(trainerName);
+
+
+        newMenuPokedex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavDirections action = OldMenuPokedexDirections.oldMenuPokedexToNewMenuPokedex();
+                NavHostFragment.findNavController(OldMenuPokedex.this).navigate(action);
+            }
+        });
 
     }
 }

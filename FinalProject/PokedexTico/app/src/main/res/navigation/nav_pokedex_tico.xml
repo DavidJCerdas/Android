@@ -31,6 +31,12 @@
         <action
             android:id="@+id/old_menuPokedex_to_pokemonTrainerInfo"
             app:destination="@id/pokemonTrainerInfo" />
+        <action
+            android:id="@+id/oldMenuPokedex_to_newMenuPokedex"
+            app:destination="@id/newMenuPokedexX" />
+        <action
+            android:id="@+id/action_oldMenuPokedex_to_newMenuPokedexX"
+            app:destination="@id/newMenuPokedexX" />
     </fragment>
 
     <fragment
@@ -69,4 +75,9 @@
         android:label="PokemonTrainerInfo">
         <argument android:name="trainerName" />
     </fragment>
+    <fragment
+        android:id="@+id/newMenuPokedexX"
+        tools:layout="@layout/menu_pokedex"
+        android:name="com.djcerdas.pokedextico.fragment.MenuPokedex"
+        android:label="MenuPokedex" />
 </navigation>

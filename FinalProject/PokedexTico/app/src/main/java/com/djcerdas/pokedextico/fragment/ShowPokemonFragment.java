@@ -38,9 +38,8 @@ public class ShowPokemonFragment extends Fragment {
         pokemonID = ShowPokemonFragmentArgs.fromBundle(getArguments()).getPokemonID();
         String pID = pokemonID.toString();
         Picasso.get().load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pID + ".png").into(showPokemon);
-
         String pokemonNameString = ShowPokemonFragmentArgs.fromBundle(getArguments()).getPokemonName();
-        pokemonName.setText(pokemonNameString);
+       pokemonName.setText(pokemonNameString);
 
 
     }
