@@ -10,32 +10,7 @@
         android:name="com.djcerdas.pokedextico.fragment.LoginFragment"
         android:label="LoginFragment" >
         <action
-            android:id="@+id/LogintoOldMenu"
-            app:destination="@id/oldMenuPokedex" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/oldMenuPokedex"
-        android:name="com.djcerdas.pokedextico.fragment.OldMenuPokedex"
-        tools:layout="@layout/old_menu_pokedex"
-        android:label="MenuPokedex">
-        <argument
-            android:name="trainerName"
-            app:argType="string" />
-        <action
-            android:id="@+id/old_menuPokedex_to_recycleView"
-            app:destination="@id/recycleView" />
-        <action
-            android:id="@+id/old_menuPokedex_to_nullDisplayFragment"
-            app:destination="@id/nullDisplayFragment" />
-        <action
-            android:id="@+id/old_menuPokedex_to_pokemonTrainerInfo"
-            app:destination="@id/pokemonTrainerInfo" />
-        <action
-            android:id="@+id/oldMenuPokedex_to_newMenuPokedex"
-            app:destination="@id/newMenuPokedexX" />
-        <action
-            android:id="@+id/action_oldMenuPokedex_to_newMenuPokedexX"
+            android:id="@+id/login_to_MenuPokedex"
             app:destination="@id/newMenuPokedexX" />
     </fragment>
 
@@ -51,12 +26,6 @@
 
 
     <fragment
-        android:id="@+id/nullDisplayFragment"
-        tools:layout="@layout/fragment_null_display"
-        android:name="com.djcerdas.pokedextico.fragment.NullDisplayFragment"
-        android:label="NullDisplayFragment" />
-
-    <fragment
         android:id="@+id/showPokemonFragment"
         tools:layout="@layout/fragment_show_pokemon"
         android:name="com.djcerdas.pokedextico.fragment.ShowPokemonFragment"
@@ -67,13 +36,6 @@
         <argument
             android:name="pokemonID"
             app:argType="integer" />
-    </fragment>
-    <fragment
-        android:id="@+id/pokemonTrainerInfo"
-        tools:layout="@layout/fragment_trainer_info"
-        android:name="com.djcerdas.pokedextico.fragment.PokemonTrainerInfo"
-        android:label="PokemonTrainerInfo">
-        <argument android:name="trainerName" />
     </fragment>
     <fragment
         android:id="@+id/newMenuPokedexX"

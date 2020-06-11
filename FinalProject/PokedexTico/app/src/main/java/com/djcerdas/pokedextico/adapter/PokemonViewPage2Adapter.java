@@ -4,6 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.djcerdas.pokedextico.fragment.NullDisplayFragment;
+import com.djcerdas.pokedextico.fragment.PokemonTrainerInfo;
+import com.djcerdas.pokedextico.fragment.RecycleViewFragment;
+
 public class PokemonViewPage2Adapter extends FragmentStateAdapter {
 
     public PokemonViewPage2Adapter(@NonNull Fragment fragment) {
@@ -13,7 +17,17 @@ public class PokemonViewPage2Adapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        return null;
+        Fragment showFragment;
+        if (position == 0) {
+            showFragment = new RecycleViewFragment();
+        } else if (position == 1) {
+            showFragment = new NullDisplayFragment();
+        } else if (position == 2) {
+            showFragment = new PokemonTrainerInfo();
+        } else {
+            showFragment = new NullDisplayFragment();
+        }
+        return showFragment;
     }
 
     @Override

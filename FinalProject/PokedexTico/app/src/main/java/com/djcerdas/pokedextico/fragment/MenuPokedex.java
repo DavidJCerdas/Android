@@ -48,14 +48,10 @@ public class MenuPokedex extends Fragment {
         return view;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-    }
-
     private List<String> getTitles() {
         List<String> tittle = new ArrayList<>();
         tittle.add("Pokemons");
-        tittle.add("Null");
+        tittle.add("Favourites");
         tittle.add("Trainer Info");
         return tittle;
     }

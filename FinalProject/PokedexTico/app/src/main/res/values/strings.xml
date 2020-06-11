@@ -14,5 +14,9 @@
     <string name="current_level">Current Level</string>
     <string name="name">Name</string>
     <string name="level">Level</string>
+    <string name="pokemons">Pokemons</string>
+    <string name="users">Users</string>
+    <string name="null_screen">Null Screen</string>
+    <string name="favourite">Favourite</string>
     <integer name="dock_enter_exit_duration">3</integer>
 </resources>

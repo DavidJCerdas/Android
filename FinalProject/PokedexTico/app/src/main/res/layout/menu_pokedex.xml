@@ -9,22 +9,37 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayoutMenuPokedex"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="parent"
+            android:layout_height="0dp"
+            android:layout_gravity="top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/pagerMenuPokedex"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="@id/tabLayoutMenuPokedex"
-                    app:layout_constraintEnd_toEndOf="@id/tabLayoutMenuPokedex"
-                    app:layout_constraintStart_toStartOf="@id/tabLayoutMenuPokedex"
-                    app:layout_constraintTop_toTopOf="@id/tabLayoutMenuPokedex"></androidx.viewpager2.widget.ViewPager2>
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pokemons" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/favourite" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/users" />
         </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pagerMenuPokedex"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayoutMenuPokedex" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
