@@ -77,7 +77,6 @@ public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
     public void onClicked(PokemonInfo pokemonInfo) {
         Integer pokemonID = pokemonInfo.getPokemonID();
         String pokemonName = pokemonInfo.getName();
-
         NavDirections action = RecycleViewFragmentDirections.recycleViewToShowPokemonFragment(pokemonName, pokemonID);
         NavHostFragment.findNavController(RecycleViewFragment.this).navigate(action);
     }

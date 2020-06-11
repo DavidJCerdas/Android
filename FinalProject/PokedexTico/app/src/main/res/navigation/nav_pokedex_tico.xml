@@ -11,7 +11,7 @@
         android:label="LoginFragment" >
         <action
             android:id="@+id/login_to_MenuPokedex"
-            app:destination="@id/newMenuPokedexX" />
+            app:destination="@id/menuPokedex" />
     </fragment>
 
     <fragment
@@ -38,8 +38,12 @@
             app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/newMenuPokedexX"
+        android:id="@+id/menuPokedex"
         tools:layout="@layout/menu_pokedex"
         android:name="com.djcerdas.pokedextico.fragment.MenuPokedex"
-        android:label="MenuPokedex" />
+        android:label="MenuPokedex">
+        <action
+            android:id="@+id/menuPokedex_to_recycleView"
+            app:destination="@id/recycleView" />
+    </fragment>
 </navigation>

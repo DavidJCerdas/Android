@@ -37,7 +37,6 @@ public class LoginFragment extends Fragment {
                 NavDirections action;
                 action = LoginFragmentDirections.loginToMenuPokedex();
                 NavHostFragment.findNavController(LoginFragment.this).navigate(action);
-                ;
             }
         });
     }
