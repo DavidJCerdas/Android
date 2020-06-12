@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -67,11 +68,11 @@ public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//
+//    }
 
     @Override
     public void onClicked(PokemonInfo pokemonInfo) {
@@ -79,5 +80,6 @@ public class RecycleViewFragment extends Fragment implements OnPokemonClicked {
         String pokemonName = pokemonInfo.getName();
         NavDirections action = RecycleViewFragmentDirections.recycleViewToShowPokemonFragment(pokemonName, pokemonID);
         NavHostFragment.findNavController(RecycleViewFragment.this).navigate(action);
+
     }
 }

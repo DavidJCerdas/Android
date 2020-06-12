@@ -41,9 +41,5 @@
         android:id="@+id/menuPokedex"
         tools:layout="@layout/menu_pokedex"
         android:name="com.djcerdas.pokedextico.fragment.MenuPokedex"
-        android:label="MenuPokedex">
-        <action
-            android:id="@+id/menuPokedex_to_recycleView"
-            app:destination="@id/recycleView" />
-    </fragment>
+        android:label="MenuPokedex" />
 </navigation>

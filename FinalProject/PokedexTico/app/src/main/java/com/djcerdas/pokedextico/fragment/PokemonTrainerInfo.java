@@ -20,7 +20,6 @@ public class PokemonTrainerInfo extends Fragment {
     private TextView trainerLevel;
     private Button exitButton;
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,9 +29,13 @@ public class PokemonTrainerInfo extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Bundle arg = getArguments();
         trainerName = view.findViewById(R.id.DisplaytrainerName);
         trainerLevel = view.findViewById(R.id.DisplayCurrentLevel);
         exitButton = view.findViewById(R.id.exitButton);
+
+        trainerName.setText(getArguments().getString("trainerName"));
+        trainerLevel.setText(String.valueOf(getArguments().getInt("trainerLevel")));
     }
 
 }

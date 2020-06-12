@@ -1,5 +1,7 @@
 package com.djcerdas.pokedextico.adapter;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -18,15 +20,20 @@ public class PokemonViewPage2Adapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         Fragment showFragment;
+        Bundle bundle = new Bundle();
+
         if (position == 0) {
             showFragment = new RecycleViewFragment();
         } else if (position == 1) {
             showFragment = new NullDisplayFragment();
         } else if (position == 2) {
+            bundle.putString("trainerName", String.valueOf("DJCerdas"));
+            bundle.putInt("trainerLevel", 500);
             showFragment = new PokemonTrainerInfo();
         } else {
             showFragment = new NullDisplayFragment();
         }
+        showFragment.setArguments(bundle);
         return showFragment;
     }
 
