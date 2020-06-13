@@ -18,5 +18,6 @@
     <string name="users">Users</string>
     <string name="null_screen">Null Screen</string>
     <string name="favourite">Favourite</string>
+    <string name="trainer_info">Trainer Info</string>
     <integer name="dock_enter_exit_duration">3</integer>
 </resources>

@@ -14,16 +14,6 @@
             app:destination="@id/menuPokedex" />
     </fragment>
 
-    <fragment
-        android:id="@+id/recycleView"
-        tools:layout="@layout/recycler_view"
-        android:name="com.djcerdas.pokedextico.fragment.RecycleViewFragment"
-        android:label="recycleView">
-        <action
-            android:id="@+id/recycleView_to_showPokemonFragment"
-            app:destination="@id/showPokemonFragment" />
-    </fragment>
-
 
     <fragment
         android:id="@+id/showPokemonFragment"
@@ -41,5 +31,9 @@
         android:id="@+id/menuPokedex"
         tools:layout="@layout/menu_pokedex"
         android:name="com.djcerdas.pokedextico.fragment.MenuPokedex"
-        android:label="MenuPokedex" />
+        android:label="MenuPokedex">
+        <action
+            android:id="@+id/menuPokedex_to_showPokemonFragment"
+            app:destination="@id/showPokemonFragment" />
+    </fragment>
 </navigation>

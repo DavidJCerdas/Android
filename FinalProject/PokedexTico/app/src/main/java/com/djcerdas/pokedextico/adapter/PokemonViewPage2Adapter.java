@@ -1,11 +1,9 @@
 package com.djcerdas.pokedextico.adapter;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-
 import com.djcerdas.pokedextico.fragment.NullDisplayFragment;
 import com.djcerdas.pokedextico.fragment.PokemonTrainerInfo;
 import com.djcerdas.pokedextico.fragment.RecycleViewFragment;
@@ -21,17 +19,20 @@ public class PokemonViewPage2Adapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         Fragment showFragment;
         Bundle bundle = new Bundle();
-
-        if (position == 0) {
-            showFragment = new RecycleViewFragment();
-        } else if (position == 1) {
-            showFragment = new NullDisplayFragment();
-        } else if (position == 2) {
-            bundle.putString("trainerName", String.valueOf("DJCerdas"));
-            bundle.putInt("trainerLevel", 500);
-            showFragment = new PokemonTrainerInfo();
-        } else {
-            showFragment = new NullDisplayFragment();
+        switch (position) {
+            case 0:
+                showFragment = new RecycleViewFragment();
+                break;
+            case 1:
+                showFragment = new NullDisplayFragment();
+                break;
+            case 2:
+                bundle.putString("trainerName", String.valueOf("DJCerdas"));
+                bundle.putInt("trainerLevel", 500);
+                showFragment = new PokemonTrainerInfo();
+                break;
+            default:
+                showFragment = new NullDisplayFragment();
         }
         showFragment.setArguments(bundle);
         return showFragment;
@@ -41,5 +42,6 @@ public class PokemonViewPage2Adapter extends FragmentStateAdapter {
     public int getItemCount() {
         return 3;
     }
+
 
 }

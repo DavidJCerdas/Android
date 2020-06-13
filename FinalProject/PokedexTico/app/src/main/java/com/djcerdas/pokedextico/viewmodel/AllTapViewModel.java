@@ -19,7 +19,7 @@ import retrofit2.Response;
 
 
 public class AllTapViewModel<list> extends ViewModel {
-    private int POKEMONTOQUERY = 10;
+    private int POKEMONTOQUERY = 35;
 
 
     public LiveData<List<PokemonInfo>> getPokemonList() {

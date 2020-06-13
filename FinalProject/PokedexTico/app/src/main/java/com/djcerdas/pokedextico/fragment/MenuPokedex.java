@@ -4,20 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
-
 import com.djcerdas.pokedextico.R;
 import com.djcerdas.pokedextico.adapter.PokemonViewPage2Adapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -45,6 +41,8 @@ public class MenuPokedex extends Fragment {
 
         new TabLayoutMediator(tabLayoutMenuPokedex, viewPager2MenuPokedex, ((tab, position) -> tab.setText(tittle.get(position)))).attach();
 
+
+        // tabLayoutMenuPokedex.addOnTabSelectedListener(new );
         return view;
     }
 
