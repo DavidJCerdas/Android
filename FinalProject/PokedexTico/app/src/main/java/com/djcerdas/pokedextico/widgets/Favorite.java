@@ -35,12 +35,13 @@ public class Favorite extends ConstraintLayout {
         TextView pokemonNameView = view.findViewById(R.id.pokemon_name);
         ImageView favoriteView = view.findViewById(R.id.is_favorite);
 
+
         if (attrs != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Favorite, defStyleAttr, defStyleRes);
             String pokemonName = typedArray.getString(R.styleable.Favorite_pokemon_name);
             pokemonNameView.setText(pokemonName);
-            Boolean isFavotire = typedArray.getBoolean(R.styleable.Favorite_favorite, false);
-            favoriteView.setActivated(true);
+            favoriteView.setBackground(typedArray.getDrawable(R.styleable.Favorite_favorite));
+
             typedArray.recycle();
         }
     }

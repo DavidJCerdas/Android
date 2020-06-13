@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="Favorite">
         <attr name="pokemon_name" format="string" />
-        <attr name="favorite" format="boolean" />
+        <attr name="favorite" format="reference" />
     </declare-styleable>
 
 </resources>

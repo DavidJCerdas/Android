@@ -35,7 +35,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 NavDirections action;
-                action = LoginFragmentDirections.loginToMenuPokedex();
+                action = LoginFragmentDirections.loginToMenuPokedex(trainerNameData.getText().toString());
                 NavHostFragment.findNavController(LoginFragment.this).navigate(action);
             }
         });

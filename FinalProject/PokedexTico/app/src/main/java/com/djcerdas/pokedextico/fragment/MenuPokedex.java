@@ -41,6 +41,9 @@ public class MenuPokedex extends Fragment {
 
         new TabLayoutMediator(tabLayoutMenuPokedex, viewPager2MenuPokedex, ((tab, position) -> tab.setText(tittle.get(position)))).attach();
 
+        // Get the trainer name from the login fragment
+        String trainerName = MenuPokedexArgs.fromBundle(getArguments()).getTrainerName();
+
         return view;
     }
 

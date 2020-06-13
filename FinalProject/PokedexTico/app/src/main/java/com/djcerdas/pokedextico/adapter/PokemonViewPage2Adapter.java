@@ -1,9 +1,13 @@
 package com.djcerdas.pokedextico.adapter;
 
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.djcerdas.pokedextico.fragment.MenuPokedex;
+import com.djcerdas.pokedextico.fragment.MenuPokedexArgs;
 import com.djcerdas.pokedextico.fragment.NullDisplayFragment;
 import com.djcerdas.pokedextico.fragment.PokemonTrainerInfo;
 import com.djcerdas.pokedextico.fragment.RecycleViewFragment;
