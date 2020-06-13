@@ -41,8 +41,6 @@ public class MenuPokedex extends Fragment {
 
         new TabLayoutMediator(tabLayoutMenuPokedex, viewPager2MenuPokedex, ((tab, position) -> tab.setText(tittle.get(position)))).attach();
 
-
-        // tabLayoutMenuPokedex.addOnTabSelectedListener(new );
         return view;
     }
 
