@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Favorite">
+        <attr name="pokemon_name" format="string" />
+        <attr name="favorite" format="boolean" />
+    </declare-styleable>
+
+</resources>

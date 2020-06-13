@@ -49,7 +49,7 @@ public class MenuPokedex extends Fragment {
     private List<String> getTitles() {
         List<String> tittle = new ArrayList<>();
         tittle.add("Pokemons");
-        tittle.add("Favourites");
+        tittle.add("Favorites");
         tittle.add("Trainer Info");
         return tittle;
     }
